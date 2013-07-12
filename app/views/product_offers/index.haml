@@ -1,0 +1,10 @@
+%center/
+%h2 Prices
+%br/
+%form{:action => search_path, :method => :get, :data => { :remote => "true" }}
+  GTIN:&nbsp;
+  %input{:id => "search_field", :name => "gtin", :size => "20"}/
+  %input{:type => "SUBMIT", :value => "Search"}/
+%br/
+%br/
+#results

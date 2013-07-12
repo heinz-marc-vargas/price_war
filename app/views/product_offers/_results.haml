@@ -1,0 +1,12 @@
+%div= @product_name
+%table{:padding => 5, :width => "35%"}
+  - @results.each do |offer|
+    %tr
+      %td= offer[:seller_name]
+      %td= "%15.2f" % offer[:base_price]
+      %td= "%15.2f" % offer[:total_price]
+
+:javascript
+  $(function(){
+    $('#search_field').focus();
+  })
