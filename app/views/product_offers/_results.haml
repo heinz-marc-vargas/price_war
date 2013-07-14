@@ -3,18 +3,15 @@
 - else
   %div= @record.name
   %br
-  %table{:padding => 5, :width => "35%"}
-    %tr
-      %td Seller Name
-      %td{:style => 'text-align: right;'} Base Price
-      %td{:style => 'text-align: right;'} Total Price
-    - @record.product_offers.each do |offer|
-      %tr
-        %td= offer[:seller_name]
-        %td{:style => 'text-align: right;'}= "%15.2f" % offer[:base_price]
-        %td{:style => 'text-align: right;'}= "%15.2f" % offer[:total_price]
-
-:javascript
-  $(function(){
-    $('#search_field').focus();
-  })
+  %div{:class => "tab_container"}
+    %div{:class => "tab_content"}
+      %table{:padding => 5, :width => "35%", :class => "tablesorter"}
+        %tr
+          %td Seller Name
+          %td{:style => 'text-align: right;'} Base Price
+          %td{:style => 'text-align: right;'} Total Price
+        - @record.product_offers.each do |offer|
+          %tr
+            %td= offer[:seller_name]
+            %td{:style => 'text-align: right;'}= "%15.2f" % offer[:base_price]
+            %td{:style => 'text-align: right;'}= "%15.2f" % offer[:total_price]

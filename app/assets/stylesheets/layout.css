@@ -1,17 +1,3 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require_self
- *= require_tree .
- */
-/* Essentials */
 
 html, div, map, dt, isindex, form, header, aside, section, section, article, footer {  
     display: block;  
@@ -22,7 +8,7 @@ height: 100%;
 margin: 0;
 padding: 0;
 font-family: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
-background: #F8F8F8;
+background: #FFF;
 font-size: 12px;
 }
 
@@ -49,7 +35,7 @@ text-decoration: underline;
 header#header {
 height: 55px;
 width: 100%;
-background: #222222 url(../images/header_bg.png) repeat-x;
+background: #222222 url(header_bg.png) repeat-x;
 }
 
 header#header h1.site_title, header#header h2.section_title {
@@ -503,7 +489,7 @@ margin-bottom: 8px}
 /* Content Manager */
 
 .tablesorter {
-width: 100%;
+width: 70%;
 margin: -5px 0 0 0;
 }
 
@@ -515,7 +501,7 @@ border-bottom: 1px dotted #ccc;
 
 .tablesorter thead tr {
 height: 34px;
-background: url(../images/table_sorter_header.png) repeat-x;
+background: url(table_sorter_header.png) repeat-x;
 text-align: left;
 text-indent: 10px;
 cursor: pointer;

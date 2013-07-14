@@ -9,9 +9,10 @@ class Gtin
   has_many :product_offers
 
   key :gtin, String, :required => true
-  key :name, String
+  key :name, String, :required => true
   timestamps!
 
+  validates_presence_of :gtin, :message => "GTIN can not be blank"
   validates_format_of :gtin, :with => /^[-0-9]+$/, :message => "Invalid GTIN format"
   validates_length_of :gtin, :within => 8..14, :allow_blank => false, :message => "Invalid GTIN format"
   validates_uniqueness_of :gtin
@@ -36,8 +37,6 @@ class Gtin
   def set_product_name
     self.name = get_product_info[:name]
   end
-
-  private
   
   def has_matching_product
     if get_product_info[:url].nil?

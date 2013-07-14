@@ -2,8 +2,8 @@
 %h2 GTIN Lookup
 %br/
 %form{:action => search_path, :method => :get, :data => { :remote => "true" }}
-  GTIN:&nbsp;
-  %input{:id => "search_field", :name => "gtin", :size => "20"}/
+  %label{:for => "gtin"} GTIN:&nbsp;
+  %input{:id => "gtin", :name => "gtin", :size => "20"}/
   %input{:type => "SUBMIT", :value => "Search"}/
 %br/
 %br/

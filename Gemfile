@@ -5,8 +5,11 @@ gem 'rails', '3.2.13'
 gem 'mongo_mapper'
 gem 'bson_ext'
 gem 'nokogiri'
-gem 'rspec-rails'
+gem 'rspec-rails', :group => [:test, :development]
+gem 'capybara'
+gem 'mocha', :require => false
 gem 'haml-rails'
+
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -41,3 +44,7 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+group :test do
+  gem 'database_cleaner'
+end
