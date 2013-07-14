@@ -18,7 +18,6 @@ class Gtin
   validates_uniqueness_of :gtin
   validate :has_matching_product
   
-
   def get_offer_list
     url = get_product_info[:url]
     doc = Nokogiri::HTML(open("http://google.com#{url}&os=sellers&prds=num:#{MAX_SELLERS}"))

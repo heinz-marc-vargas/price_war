@@ -1,17 +1,22 @@
-- if @record.errors.any?
-  %div= @record.errors.messages[:gtin].first
-- else
-  %div= @record.name
-  %br
-  %div{:class => "tab_container"}
-    %div{:class => "tab_content"}
-      %table{:padding => 5, :width => "35%", :class => "tablesorter"}
-        %tr
-          %td Seller Name
-          %td{:style => 'text-align: right;'} Base Price
-          %td{:style => 'text-align: right;'} Total Price
-        - @record.product_offers.each do |offer|
-          %tr
-            %td= offer[:seller_name]
-            %td{:style => 'text-align: right;'}= "%15.2f" % offer[:base_price]
-            %td{:style => 'text-align: right;'}= "%15.2f" % offer[:total_price]
+%section{ :id => "main"}
+  - if @record.errors.any?
+    %div
+      %h4{:class => 'alert_error'}= @record.errors.messages[:gtin].first
+  - else
+    %div
+      %h4{:class => 'alert_success'}= @record.name
+      %br
+      %div{:class => "tab_container"}
+        %div{:class => "tab_content"}
+          %table{:class => "tablesorter", :cellspacing => "0"}
+            %thead
+              %tr
+                %th Seller Name
+                %th{:style => 'text-align: right;'} Base Price
+                %th{:style => 'text-align: right;'} Total Price
+            %tbody
+            - @record.product_offers.each do |offer|
+              %tr
+                %td= offer[:seller_name]
+                %td{:style => 'text-align: right;'}= "%15.2f" % offer[:base_price]
+                %td{:style => 'text-align: right;'}= "%15.2f" % offer[:total_price]

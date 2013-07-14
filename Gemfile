@@ -9,7 +9,7 @@ gem 'rspec-rails', :group => [:test, :development]
 gem 'capybara'
 gem 'mocha', :require => false
 gem 'haml-rails'
-
+gem "heroku"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
