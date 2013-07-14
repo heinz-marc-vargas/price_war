@@ -11,7 +11,7 @@
           %table{:class => "tablesorter", :cellspacing => "0"}
             %thead
               %tr
-                %th Seller Name
+                %th= "Seller Name   (Total: #{@record.product_offers.count} seller/s)"
                 %th{:style => 'text-align: right;'} Base Price
                 %th{:style => 'text-align: right;'} Total Price
             %tbody
